@@ -3,7 +3,7 @@ import { Mona_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
-import { cn } from "@/lib/utils";
+
 
 const monaSans = Mona_Sans({
   variable: "--font-mona-sans",
