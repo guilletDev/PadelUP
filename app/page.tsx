@@ -1,6 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import ClientForm from "@/components/forms/ClientForm"
+
 const home = () => {
   return (
     <div className="flex h-screen max-h-screen">
@@ -12,6 +14,7 @@ const home = () => {
               height={1000}
               className="mb-12 h-10 w-fit" 
               />
+              <ClientForm />
               <div className="text-[14px] font-normal mt-20 flex justify-between">
                   <p className="justify-items-end text-gray-400 xl:text-left ">
                   © copyright 2025 PadelUp

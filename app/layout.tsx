@@ -13,6 +13,9 @@ const monaSans = Mona_Sans({
 export const metadata: Metadata = {
   title: "PadelUp",
   description: "Reservá tu cancha de pádel en segundos. Elegí tu horario y disfruta del juego sin demoras",
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
