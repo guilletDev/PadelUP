@@ -9,6 +9,7 @@ import SubmitButton from "../SubmitButton";
 import { useState } from "react";
 import { UserFormValidation } from "@/lib/validation";
 import { useRouter } from "next/navigation";
+
 export enum FormFieldType {
   INPUT = "input",
   TEXTAREA = "textarea",
@@ -28,13 +29,13 @@ const ClientForm = () => {
   const form = useForm<z.infer<typeof UserFormValidation>>({
     resolver: zodResolver(UserFormValidation),
     defaultValues: {
-      name: "",
+      /* name: "",
       email:"",
-      phone: "",
+      phone: "", */
     },
   });
 
-  async function onSubmit({name, email, phone}: z.infer<typeof UserFormValidation>) {
+  async function onSubmit({/* name, email, phone */}: z.infer<typeof UserFormValidation>) {
     setIsLoading(true)
 
     try {
