@@ -8,7 +8,8 @@ import { Form } from "@/components/ui/form";
 import SubmitButton from "../SubmitButton";
 import { useState } from "react";
 import { UserFormValidation } from "@/lib/validation";
-/* import { useRouter } from "next/navigation"; */
+import { useRouter } from "next/navigation";
+import { createUser } from "@/lib/actions/client.actions";
 
 export enum FormFieldType {
   INPUT = "input",
@@ -23,38 +24,40 @@ export enum FormFieldType {
 
 
 const ClientForm = () => {
-  /* const router = useRouter() */
+  const router = useRouter()
   const [isLoading, setIsLoading] = useState(false)
 
   const form = useForm<z.infer<typeof UserFormValidation>>({
     resolver: zodResolver(UserFormValidation),
     defaultValues: {
-      /* name: "",
+      name: "",
       email:"",
-      phone: "", */
+      phone: "", 
     },
   });
 
-  async function onSubmit({/* name, email, phone */}: z.infer<typeof UserFormValidation>) {
+  async function onSubmit({name, email, phone}: z.infer<typeof UserFormValidation>) {
     setIsLoading(true)
 
     try {
-      /* const userData = {name, email, phone}
+      const userData = {name, email, phone}
 
       const user = await createUser(userData);
 
-      if(user) router.push(`/clients/${user.$id}/register`)  */
+      if(user) router.push(`/clients/${user.$id}/reservation`) 
 
     } catch (error) {
       console.log(error)
     }
+
+    setIsLoading(false)
   }
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 flex-1">
         <section className="mb-12 space-y-4">
-          <h1 className="text-[32px] font-bold md:text-[36px]">
+          <h1 className="text-[32px] font-bold md:text-[36px] ">
             Bienvenido! 👋
           </h1>
           <p className="text-gray-400">Completa tus datos para empezar</p>

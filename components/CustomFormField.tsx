@@ -2,7 +2,7 @@
 
 import {
   FormControl,
- 
+  
   FormField,
   FormItem,
   FormLabel,
@@ -58,11 +58,11 @@ const RenderField = ({field, props}: {field:any, props:CustomProps})=>{
                <PhoneInput
                 defaultCountry="AR"
                 placeholder={placeholder}
-                
+                international
                 withCountryCallingCode
                 value={field.value as E164Number | undefined}
                 onChange={field.onChange}
-                className="mt-2 h-11 rounded-md px-3 text-sm border bg-gray-950 placeholder:text-gray-600 border-gray-500"
+                className=" mt-2 h-11 rounded-md px-3 text-sm border bg-gray-950 placeholder:text-gray-600 border-gray-500 "
                 />
             </FormControl>
       
